@@ -1,0 +1,28 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-logo {
+  font-family: "NotoSans-Bold";
+  font-weight: 800;
+  div{
+    width: 32px;
+    height: 32px;
+    background-color: orange;
+    border-radius: 50%;
+  }
+}
+
+
+.profile-image-container{
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+  
+  img{
+    
+    width: 32px;
+    // height: 36.69px;
+  }
+}

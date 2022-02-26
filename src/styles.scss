@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "NotoSans-Bold";
+  src: url("./assets/fonts/NotoSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSans-BoldItalic";
+  src: url("./assets/fonts/NotoSans-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSans-Italic";
+  src: url("./assets/fonts/NotoSans-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSans-Regular";
+  src: url("./assets/fonts/NotoSans-Regular.ttf") format("truetype");
+}
+
+* {
+  font-family: 'NotoSans-Regular';
+}
+
+
+.form-fields {
+    width: 100% !important;
+    border-radius: 12px;
+  }
