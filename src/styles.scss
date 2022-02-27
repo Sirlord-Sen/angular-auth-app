@@ -4,6 +4,14 @@
   src: url("./assets/fonts/NotoSans-Bold.ttf") format("truetype");
 }
 @font-face {
+  font-family: "NotoSans-Light";
+  src: url("./assets/fonts/NotoSans-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotoSans-Thin";
+  src: url("./assets/fonts/NotoSans-Thin.ttf") format("truetype");
+}
+@font-face {
   font-family: "NotoSans-BoldItalic";
   src: url("./assets/fonts/NotoSans-BoldItalic.ttf") format("truetype");
 }
@@ -24,4 +32,19 @@
 .form-fields {
     width: 100% !important;
     border-radius: 12px;
+  }
+  
+  .container {
+    position: absolute;
+    width: 473.83px;
+    height: 584.3px;
+    left: 33.55%;
+    right: 33.55%;
+    top: 10.28%;
+    bottom: 22.99%;
+    padding: 2%;
+  
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    border-radius: 24px;
   }

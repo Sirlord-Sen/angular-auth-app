@@ -1,1 +1,48 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+
+<div class="container">
+    <app-logo></app-logo>
+
+  <p class="p1">Login</p>
+  
+
+      <mat-form-field appearance="outline" class="form-fields">
+        <mat-icon matPrefix style="margin-right: 10px;">email</mat-icon>
+        <input matInput placeholder="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-fields">
+        <mat-icon matPrefix style="margin-right: 10px;">lock</mat-icon>
+        <input matInput placeholder="Password" />
+    </mat-form-field>
+
+    <br>
+    <button mat-flat-button>Login</button>
+    
+    <br>
+    <br>
+
+    <div fxLayoutAlign="center " fxLayout="column"  class="bottom" fxLayoutGap="20px">
+
+        <p>or continue with these social profile</p>
+
+        <div fxLayout="row" fxLayoutAlign="center " fxLayoutGap="10px">
+            <div class="social-container">
+                <mat-icon svgIcon="google"></mat-icon>
+            </div>
+            <div class="social-container">
+                <mat-icon svgIcon="facebook"></mat-icon>
+                
+            </div>
+            <div class="social-container">
+                <mat-icon svgIcon="twitter"></mat-icon>
+                
+            </div>
+            <div class="social-container">
+                <mat-icon svgIcon="github"></mat-icon>
+
+            </div>
+        </div>
+        <p>Don’t have an account yet? <span routerLink="/register" style="color: rgb(83, 129, 216); cursor: pointer;">Register</span></p>
+    </div>
+</div>

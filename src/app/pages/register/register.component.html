@@ -1,43 +1,53 @@
 <!-- <app-header></app-header> -->
 
 <div class="container">
-  <p>Join thousands of learners from around the world</p>
-  <p>
-    Master web development by making real-life projects. There are multiple
-    paths for you to choose
+    <app-logo></app-logo>
+
+  <p class="p1">Join thousands of learners from<br/>around the world</p>
+  <p class="p2">
+    Master web development by making real-life<br/>projects. There are multiple
+    paths for you to<br/>choose
   </p>
 
   
 
       <mat-form-field appearance="outline" class="form-fields">
-        <mat-icon matPrefix>email</mat-icon>
+        <mat-icon matPrefix style="margin-right: 10px;">email</mat-icon>
         <input matInput placeholder="Email" />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="form-fields">
-        <mat-icon matPrefix>lock</mat-icon>
+        <mat-icon matPrefix style="margin-right: 10px;">lock</mat-icon>
         <input matInput placeholder="Password" />
     </mat-form-field>
 
     <br>
+    <button mat-flat-button>Start coding now </button>
+    
+    <br>
+    <br>
+
     <div fxLayoutAlign="center " fxLayout="column"  class="bottom" fxLayoutGap="20px">
 
         <p>or continue with these social profile</p>
 
         <div fxLayout="row" fxLayoutAlign="center " fxLayoutGap="10px">
             <div class="social-container">
-                <mat-icon svgIcon=""></mat-icon>
+                <mat-icon svgIcon="google"></mat-icon>
             </div>
             <div class="social-container">
-
+                <mat-icon svgIcon="facebook"></mat-icon>
+                
             </div>
             <div class="social-container">
-
+                <mat-icon svgIcon="twitter"></mat-icon>
+                
             </div>
             <div class="social-container">
+                <mat-icon svgIcon="github"></mat-icon>
 
             </div>
         </div>
-        <p>Already a member? <span style="color: rgb(83, 129, 216);">Login</span></p>
+        <p>Already a member? <span routerLink="/login" style="color: rgb(83, 129, 216); cursor: pointer;">Login</span></p>
     </div>
 </div>
