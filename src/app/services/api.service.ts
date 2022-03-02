@@ -77,7 +77,7 @@ export class ApiService {
     email?: string;
   }) {
     this.getToken();
-    return this.http.post(this.BASE_URL, updateQuery(payload), this.options);
+    return this.http.post(this.BASE_URL, updateQuery(payload), this.options)
   }
 
   refreshToken() {

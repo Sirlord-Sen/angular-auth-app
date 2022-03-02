@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChildren } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { updatePhoto } from 'src/app/queries';
 import { ApiService } from 'src/app/services/api.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -23,7 +21,7 @@ export class EditProfileInfoComponent implements OnInit {
   password!: string;
   phone!: string;
   email!: string;
-  profilePic: any = '/assets/images/profile.png';
+  profilePic: any = '/assets/images/user.png';
 
   @ViewChildren('img') img!: HTMLInputElement;
 
@@ -52,7 +50,7 @@ export class EditProfileInfoComponent implements OnInit {
   }
 
   save() {
-    this.api
+    let fiedsObsr  = this.api
       .updateUser({
         username: this.username ? this.username : 'null',
         bio: this.bio ? this.bio : 'null',
@@ -61,33 +59,42 @@ export class EditProfileInfoComponent implements OnInit {
         phone: this.phone ? this.phone : 'null',
         email: this.email ? this.email : 'null',
       })
-      .subscribe(({ data }: any) => {
+
+      let photoObsr = this.api._updatePhoto(this.photoForm)
+    if(this.photoForm){
+      Promise.all([fiedsObsr.toPromise(),photoObsr]).then((res:any)=>{
+        let userData: UserData = this.store.getData();
+        let fields = res[0].data;
+        res[1].json().then(({data}:any)=>{
+          if (data) {
+            userData.profile.picture = data.uploadPhoto.photo;
+            userData.profile.bio = fields.updateUser.profile.bio;
+            userData.profile.phone = fields.updateUser.profile.phone;
+            userData.user.email = fields.updateUser.user.email;
+            userData.user.name = fields.updateUser.user.name;
+            userData.user.username = fields.updateUser.user.username;
+            userData.user.id = fields.updateUser.user.id;
+            this.store.saveUserData(userData);
+            this.toast.showToast('Saved', 'success-toast');
+          }
+        })
+      })
+    }else{
+      fiedsObsr.subscribe(({ data }: any) => {
         if (data) {
           let userData: UserData = this.store.getData();
           userData.profile.bio = data.updateUser.profile.bio;
           userData.profile.phone = data.updateUser.profile.phone;
-
           userData.user.email = data.updateUser.user.email;
           userData.user.name = data.updateUser.user.name;
           userData.user.username = data.updateUser.user.username;
           userData.user.id = data.updateUser.user.id;
-
           this.store.saveUserData(userData);
           this.toast.showToast('Saved', 'success-toast');
-          this.router.navigate(["/profile"])
         }
-      });
-    if (this.photoForm) {
-      this.api._updatePhoto(this.photoForm).then(e=>e.json()).then(( {data} ) => {
-        if (data) {
-          let _userData: UserData = this.store.getData();
-          _userData.profile.picture = data.uploadPhoto.photo;
-      
-
-          this.store.saveUserData(_userData);
-        }
-      });
+      })
     }
+
   }
 
   getImage(e: any) {
