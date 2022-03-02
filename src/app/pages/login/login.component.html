@@ -8,16 +8,16 @@
 
       <mat-form-field appearance="outline" class="form-fields">
         <mat-icon matPrefix style="margin-right: 10px;">email</mat-icon>
-        <input matInput placeholder="Email" />
+        <input matInput placeholder="Email" [(ngModel)]="email" />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="form-fields">
         <mat-icon matPrefix style="margin-right: 10px;">lock</mat-icon>
-        <input matInput placeholder="Password" />
+        <input matInput placeholder="Password" type="password" [(ngModel)]="password"/>
     </mat-form-field>
 
     <br>
-    <button mat-flat-button>Login</button>
+    <button (click)="login()" mat-flat-button>Login</button>
     
     <br>
     <br>

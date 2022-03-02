@@ -1,1 +1,79 @@
 <app-header></app-header>
+
+<div fxLayoutAlign=" center" fxLayout="column" fxLayoutGap="px">
+  <h1>Personal info</h1>
+  <p class="p2">Basic info, like your name and photo</p>
+</div>
+
+<div class="profile-container">
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="gappx"
+  >
+    <div>
+      <h2>Profile</h2>
+      <p class="p3">Some info may be visible to other people</p>
+    </div>
+
+    <button routerLink="/edit-profile" mat-stroked-button>Edit</button>
+  </div>
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">PHOTO</p>
+    <div class="profile-image-container">
+      <img [src]="userData.profile.picture" #img alt="" />
+    </div>
+  </div>
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">NAME</p>
+    <p>{{userData.user.name}}</p>
+  </div>
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">BIO</p>
+    <p>{{userData.profile.bio}}</p>
+  </div>
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">PHONE</p>
+    <p>{{userData.profile.phone}}</p>
+  </div>
+  <div
+    class="_row"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">EMAIL</p>
+    <p>{{userData.user.email}}</p>
+  </div>
+  <div
+    class="_row"
+    style="border-width: 0px;"
+    fxLayout="row"
+    fxLayoutAlign=" center"
+    fxLayoutGap="gappx"
+  >
+    <p class="label">PASSWORD</p>
+    <p>*************</p>
+  </div>
+</div>

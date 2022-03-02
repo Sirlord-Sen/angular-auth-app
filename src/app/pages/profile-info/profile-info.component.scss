@@ -1,0 +1,42 @@
+h1, h2{
+  margin-bottom: 0;
+}
+
+.profile-container {
+    width: 845px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    .label{
+      margin-right: 194px;
+      color: #BDBDBD;
+      width: 60px;
+    }
+}
+
+._row{
+  padding: 20px 48px 20px 48px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+button{
+  color: #828282;
+  border-color: #828282;
+  border-radius: 12px;
+  width: 95px;
+}
+.profile-image-container{
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  img{
+    
+    width: 72px;
+    // height: 36.69px;
+  }
+}

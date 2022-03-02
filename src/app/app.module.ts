@@ -17,9 +17,15 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { LogoComponent } from './components/logo/logo.component';
+import { LogoComponent } from './shared/logo/logo.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,18 +40,24 @@ import { LogoComponent } from './components/logo/logo.component';
   imports: [
     HttpClientModule,
     CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatToolbarModule,
     FlexLayoutModule,
+    MatMenuModule,
     MatIconModule,
     MatRippleModule,
     MatInputModule,
     MatFormFieldModule,
   ],
-  providers: [],
+  providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
+    CookieService,
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

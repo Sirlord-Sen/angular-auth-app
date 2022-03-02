@@ -26,14 +26,29 @@
 
 * {
   font-family: 'NotoSans-Regular';
+
+}
+html, body{
+  background-color: #FAFAFB;
 }
 
+// toast styles 
+.mat-snack-bar-container.success-toast {
+  background: #27b676 ;
+  color: #ffffff;
+}
+
+
+.mat-snack-bar-container.error-toast {
+  background: #C31A1A ;
+  color: #ffffff;
+}
 
 .form-fields {
     width: 100% !important;
     border-radius: 12px;
   }
-  
+
   .container {
     position: absolute;
     width: 473.83px;
@@ -48,3 +63,19 @@
     box-sizing: border-box;
     border-radius: 24px;
   }
+
+  .p1{
+    font-size: larger;
+    font-weight: 600;
+  }
+  
+  .p2{
+    font-size: 'NotoSans-Light' !important;
+    color: rgba(51, 51, 51, 1);
+  }
+  .p3{
+    font-size: 'NotoSans-Light' !important;
+    color: rgba(130, 130, 130, 1);
+  }
+
+  

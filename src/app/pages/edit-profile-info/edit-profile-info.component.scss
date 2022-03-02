@@ -1,0 +1,77 @@
+h2 {
+    margin: 0;
+}
+.p3{
+    margin-top: 0px;
+}
+.profile-container {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    .label{
+      margin-right: 194px;
+      color: #BDBDBD;
+      width: 60px;
+    }
+}
+._container{
+    width: 845px;
+    margin: 0 auto;
+}
+.backButton{
+    color:  #2D9CDB;
+}
+input[type='file']{
+  
+    height:100px;
+    width:150px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity:0;
+    cursor:pointer;
+
+  }
+.profile-image-container{
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+    img{
+      
+      width: 72px;
+      // height: 36.69px;
+    }
+  }
+
+  ::ng-deep .mat-form-field-outline-start {
+    border-radius: 12px 0 0 12px !important;
+    min-width: 8px !important;
+  }
+  
+  ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 12px 12px 0 !important;
+  }
+  
+  ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+    padding: 0.6em 0px 0.9em 0px !important;
+  }
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 10px;
+  }
+  span{
+      color: #828282;
+      font-size: 13px;
+  }
+
+  button{
+      border-radius: 12px;
+  }

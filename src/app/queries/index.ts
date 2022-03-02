@@ -1,0 +1,5 @@
+export { default as loginQuery } from './login.query'
+export { default as signupQuery } from './signup.query'
+export { default as logoutQuery } from './logout.query'
+export { default as updatePhoto } from './photo.query'
+export { default as update } from './update.query'

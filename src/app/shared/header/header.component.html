@@ -1,13 +1,24 @@
-<mat-toolbar>
+<mat-toolbar style="background-color: transparent;">
   <app-logo></app-logo>
   <span class="spacer"></span>
 
-  <div fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="15px">
-    <!-- <ng-content></ng-content> -->
-    <div class="profile-image-container">
-      <img src="/assets/images/profile.png" alt="" />
-    </div>
-
-    <span>{{ "Lord Osei Wiafe" }} </span><mat-icon> arrow_drop_down</mat-icon>
-  </div>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon style="margin-right: 15px;">
+      <div class="profile-image-container" style="margin-top: -5px;">
+        <img [src]="'http://daba-exercise-app.herokuapp.com/public/'+store.getData().profile.picture" #img  (error)="img.src =
+        '/assets/images/user.png'" alt="" />
+      </div>
+    </mat-icon>
+    <span>{{ store.getData().user.name||'Not provided' }} </span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
 </mat-toolbar>
+<mat-menu #menu="matMenu" class="profile-menu">
+  <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx" style="width: 164.12px;">
+
+    <button routerLink="/profile" mat-button style="text-align: left; width: 100%;"><mat-icon style="margin-right: 7px; color: #4F4F4F;">account_circle</mat-icon>My Profile</button>
+    <button mat-button style="text-align: left; width: 100%; margin-bottom: 10px;"><mat-icon style="margin-right: 6px; color: #4F4F4F;">group</mat-icon> Chat</button>
+    <div style=" border-top: 1px solid rgb(218, 218, 218); width: 100%; margin: 10px 0"></div>
+    <button (click)="logout()" mat-button style="color: red;text-align: left;"><mat-icon style="margin-right: 10px;">logout</mat-icon>Logout</button>
+  </div>
+</mat-menu>

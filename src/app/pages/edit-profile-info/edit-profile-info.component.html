@@ -1,1 +1,63 @@
 <app-header></app-header>
+
+<div class="_container">
+  <button mat-button class="backButton" routerLink="/profile">
+    <mat-icon>keyboard_arrow_left</mat-icon> Back
+  </button>
+  <div class="profile-container">
+    <h2>Change Info</h2>
+    <p class="p3">Changes will be reflected to every services</p>
+
+    <br />
+
+    <div fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="15px">
+      <div class="profile-image-container">
+        
+        <img [src]="profilePic" alt="" #img id="image"  />
+
+      </div>
+      <button mat-button style="color: #828282;">CHANGE PHOTO<input id="photoElem" type="file" (change)="getImage($event)"></button>
+    </div>
+    <br>
+
+    <div style="width: 416px;">
+        <span>Name</span>
+        <mat-form-field   appearance="outline" class="form-fields">
+            <input matInput placeholder="Enter your name..." [(ngModel)]="username" />
+        </mat-form-field>
+
+    </div>
+    <div style="width: 416px;">
+        <span>Bio</span>
+        <mat-form-field appearance="outline" class="form-fields">
+            <textarea matInput placeholder="Enter your bio..." [(ngModel)]="bio" ></textarea>
+        </mat-form-field>
+
+    </div>
+    <div style="width: 416px;">
+        <span>Phone</span>
+        <mat-form-field appearance="outline" class="form-fields">
+            <input matInput placeholder="Enter your phone..."  [(ngModel)]="phone"/>
+        </mat-form-field>
+
+    </div>
+    <div style="width: 416px;">
+        <span>Email</span>
+        <mat-form-field appearance="outline" class="form-fields">
+            <input matInput placeholder="Enter your email..."  [(ngModel)]="email"/>
+        </mat-form-field>
+
+    </div>
+    <div style="width: 416px;">
+        <span>Password</span>
+        <mat-form-field appearance="outline" class="form-fields">
+            <input type="password" matInput placeholder="Enter your new password..."  [(ngModel)]="password"/>
+        </mat-form-field>
+
+    </div>
+    <br>
+    <button (click)="save()" mat-button class="backButton" style="background-color: #2F80ED; color: white; width: 82px;">
+        Save
+      </button>
+  </div>
+</div>

@@ -13,6 +13,10 @@
   }
 }
 
+.profile-dropdown{
+  cursor: pointer;
+
+}
 
 .profile-image-container{
   width: 32px;
@@ -24,5 +28,19 @@
     
     width: 32px;
     // height: 36.69px;
+  }
+}
+.mat-menu {
+  min-width: 200 !important;
+}
+::ng-deep .profile-menu{
+  padding: 12px;
+  // width: 188px;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px !important;
+  button{
+    width: 120px;
+    border-radius: 12px;
   }
 }
