@@ -77,7 +77,6 @@ export class EditProfileInfoComponent implements OnInit {
             userData.user.id = fields.updateUser.user.id;
             this.store.saveUserData(userData);
             this.toast.showToast('Saved', 'success-toast');
-            this.router.navigate(['/profile'])
           }
         })
       })
@@ -93,6 +92,7 @@ export class EditProfileInfoComponent implements OnInit {
           userData.user.id = data.updateUser.user.id;
           this.store.saveUserData(userData);
           this.toast.showToast('Saved', 'success-toast');
+          this.router.navigate(['/profile'])
         }
       })
     }
