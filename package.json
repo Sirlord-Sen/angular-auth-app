@@ -2,9 +2,9 @@
   "name": "authentication-app",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
-    "start": "node server.js",
-    "build": "ng build --prod",
+    "heroku-postbuild": "ng build --proxy-config proxy.config.json",
+    "start": "node server.js --proxy-config proxy.config.json",
+    "build": "ng build --proxy-config proxy.config.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
