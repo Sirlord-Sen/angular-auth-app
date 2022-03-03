@@ -67,7 +67,6 @@ export class EditProfileInfoComponent implements OnInit {
         let fields = res[0].data;
         res[1].json().then(({data}:any)=>{
           if (data) {
-            this.router.navigate(['/profile']);
             userData.profile.picture = data.uploadPhoto.photo;
             userData.profile.bio = fields.updateUser.profile.bio;
             userData.profile.phone = fields.updateUser.profile.phone;
@@ -77,6 +76,7 @@ export class EditProfileInfoComponent implements OnInit {
             userData.user.id = fields.updateUser.user.id;
             this.store.saveUserData(userData);
             this.toast.showToast('Saved', 'success-toast');
+            this.router.navigate(['/profile']);
           }
         })
       })
@@ -92,8 +92,8 @@ export class EditProfileInfoComponent implements OnInit {
           userData.user.username = data.updateUser.user.username;
           userData.user.id = data.updateUser.user.id;
           this.store.saveUserData(userData);
-          // this.router.navigate(['/profile'])
           this.toast.showToast('Saved', 'success-toast');
+          this.router.navigate(['/profile'])
         }
       })
     }
