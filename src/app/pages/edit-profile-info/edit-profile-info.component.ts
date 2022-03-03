@@ -42,7 +42,7 @@ export class EditProfileInfoComponent implements OnInit {
     this.email = this.userData.user.email;
     if (this.userData.profile.picture) {
       this.profilePic =
-        'http://daba-exercise-app.herokuapp.com/public/' +
+        'https://daba-exercise-app.herokuapp.com/public/' +
         this.userData.profile.picture;
     }
 

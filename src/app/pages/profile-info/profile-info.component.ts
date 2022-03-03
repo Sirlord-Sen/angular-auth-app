@@ -19,7 +19,7 @@ export class ProfileInfoComponent implements OnInit {
   ngOnInit(): void {
     this.userData = this.store.getData()
     if(this.userData.profile.picture){
-      this.userData.profile.picture = "http://daba-exercise-app.herokuapp.com/public/"+this.userData.profile.picture
+      this.userData.profile.picture = "https://daba-exercise-app.herokuapp.com/public/"+this.userData.profile.picture
     }
      else{
        this.userData.profile.picture = '/assets/images/user.png'

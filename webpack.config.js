@@ -17,7 +17,7 @@ module.exports = {
       proxy: {
     /** Same as proxy.conf.json or proxy.conf.js */
         ' /api/*': {
-            target: "http://daba-exercise-app.herokuapp.com/graphql",
+            target: "https://daba-exercise-app.herokuapp.com/graphql",
             secure: false,
             changeOrigin: true,
             logLevel: "debug",

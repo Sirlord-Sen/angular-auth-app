@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:'http://daba-exercise.herokuapp.com/graphql/'
+  api:'https://daba-exercise.herokuapp.com/graphql'
 };
