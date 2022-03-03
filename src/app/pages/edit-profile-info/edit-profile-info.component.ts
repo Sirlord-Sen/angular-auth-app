@@ -59,9 +59,9 @@ export class EditProfileInfoComponent implements OnInit {
         phone: this.phone ? this.phone : 'null',
         email: this.email ? this.email : 'null',
       })
-      let photoObsr
+      let photoObsr: Promise<Response> | null
       if(this.photoForm) {photoObsr = this.api._updatePhoto(this.photoForm)}
-      else{ photoObsr = undefined }
+      else{ photoObsr = null }
     if(this.photoForm){
       Promise.all([fiedsObsr.toPromise(),photoObsr]).then((res:any)=>{
         let userData: UserData = this.store.getData();
@@ -77,6 +77,7 @@ export class EditProfileInfoComponent implements OnInit {
             userData.user.id = fields.updateUser.user.id;
             this.store.saveUserData(userData);
             this.toast.showToast('Saved', 'success-toast');
+            this.router.navigate(['/profile'])
           }
         })
       })

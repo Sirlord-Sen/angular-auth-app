@@ -12,7 +12,9 @@ import { ToastService } from 'src/app/services/toast.service';
 export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
-  constructor(public api: ApiService, public router: Router,
+  constructor(
+    public api: ApiService, 
+    public router: Router,
     public toast :ToastService,
     public store :StorageService,
     ) {}
