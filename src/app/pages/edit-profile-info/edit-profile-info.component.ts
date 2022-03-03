@@ -59,8 +59,9 @@ export class EditProfileInfoComponent implements OnInit {
         phone: this.phone ? this.phone : 'null',
         email: this.email ? this.email : 'null',
       })
-      console.log(this.photoForm)
-      let photoObsr = this.api._updatePhoto(this.photoForm)
+      let photoObsr
+      if(this.photoForm) {photoObsr = this.api._updatePhoto(this.photoForm)}
+      else{ photoObsr = undefined }
     if(this.photoForm){
       Promise.all([fiedsObsr.toPromise(),photoObsr]).then((res:any)=>{
         let userData: UserData = this.store.getData();
