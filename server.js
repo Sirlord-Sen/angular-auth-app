@@ -6,11 +6,14 @@ function requireHTTPS(req, res, next) {
     next();
 }
 const express = require('express');
+const {join} = require("path")
 const app = express();
-app.use(requireHTTPS);
-app.use(express.static('./dist/authentication-app'));
+// app.use(requireHTTPS);
+app.use(express.static(__dirname + '/dist/authentication-app'));
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: 'dist/authentication-app/'});
+    res.sendFile(join(__dirname + '/dist/authentication-app/index.html'));
 });
 
-app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080, () => {
+    console.log("server up")
+})
