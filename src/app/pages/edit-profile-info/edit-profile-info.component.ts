@@ -59,15 +59,15 @@ export class EditProfileInfoComponent implements OnInit {
         phone: this.phone ? this.phone : 'null',
         email: this.email ? this.email : 'null',
       })
-      let photoObsr: Promise<Response> | null
-      if(this.photoForm) {photoObsr = this.api._updatePhoto(this.photoForm)}
-      else{ photoObsr = null }
+
     if(this.photoForm){
+      let photoObsr = this.api._updatePhoto(this.photoForm)
       Promise.all([fiedsObsr.toPromise(),photoObsr]).then((res:any)=>{
         let userData: UserData = this.store.getData();
         let fields = res[0].data;
         res[1].json().then(({data}:any)=>{
           if (data) {
+            this.router.navigate(['/profile']);
             userData.profile.picture = data.uploadPhoto.photo;
             userData.profile.bio = fields.updateUser.profile.bio;
             userData.profile.phone = fields.updateUser.profile.phone;
@@ -83,6 +83,7 @@ export class EditProfileInfoComponent implements OnInit {
     }else{
       fiedsObsr.subscribe(({ data }: any) => {
         if (data) {
+          this.router.navigate(['/profile']);
           let userData: UserData = this.store.getData();
           userData.profile.bio = data.updateUser.profile.bio;
           userData.profile.phone = data.updateUser.profile.phone;
@@ -91,8 +92,8 @@ export class EditProfileInfoComponent implements OnInit {
           userData.user.username = data.updateUser.user.username;
           userData.user.id = data.updateUser.user.id;
           this.store.saveUserData(userData);
+          // this.router.navigate(['/profile'])
           this.toast.showToast('Saved', 'success-toast');
-          this.router.navigate(['/profile'])
         }
       })
     }
