@@ -62,7 +62,6 @@ const app = express(),
 app.use(express.static(base_path)); // Serve app assets from ./dist/${app_name}
 
 for (const path in proxy_config) {
-  console.log(proxy_config[path]);
   if (!proxy_config.hasOwnProperty(path)) {
     continue;
   }
