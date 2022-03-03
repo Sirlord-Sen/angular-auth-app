@@ -1,7 +1,7 @@
 {
     "/api/*": {
         "target": "https://daba-exercise-app.herokuapp.com/graphql",
-        "secure": true,
+        "secure": false,
         "changeOrigin": true,
         "logLevel": "debug",
         "pathRewrite": {
